@@ -1,0 +1,16 @@
+[project]
+name = "miss"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.3",
+    "numpy>=2.2.6",
+    "plotly>=6.1.2",
+    "pygame>=2.6.1",
+    "seaborn>=0.13.2",
+    "streamlit>=1.45.1",
+    "tqdm>=4.67.1",
+    "watchdog>=6.0.0",
+]

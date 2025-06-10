@@ -1,14 +1,24 @@
-from reimplementation.interfaces.behaviors import BasicReproduction
-from reimplementation.simulation.simulation import (
+import os
+import os.path
+
+from interfaces.behaviors import BasicReproduction
+from simulation.simulation import (
     EncounterManager,
     SimulationEngine,
     WorldState,
 )
-from reimplementation.utils.logger import SimulationLogger
+from utils.logger import SimulationLogger
+
+DIR = "results"
+FILE_NR = len(
+    [name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))]
+)
+BOARD_SIZE = (40, 40)
+POPULATION_SIZE = 1000
 
 
 def setup_simulation():
-    world = WorldState((40, 40))
+    world = WorldState(BOARD_SIZE)
     logger = SimulationLogger(log_all_encounters=True)
 
     # Explicitly provide a working reproduction system
@@ -22,7 +32,7 @@ def setup_simulation():
         world_state=world,
         encounter_manager=encounter_manager,
         logger=logger,
-        population_size=10000,
+        population_size=POPULATION_SIZE,
     )
 
     # Properly initialize population and add agents to the world
@@ -39,7 +49,7 @@ def main():
         engine.step()
 
     # Save results after simulation
-    logger.save_data("reimplementation/results/simulation_results4.json")
+    logger.save_data(f"reimplementation/results/simulation_results{FILE_NR}.json")
 
     # Generate analysis report
     analysis = logger.get_analysis_summary()

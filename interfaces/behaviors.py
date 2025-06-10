@@ -5,7 +5,7 @@ from typing import Optional, Tuple
 
 import numpy as np
 
-from reimplementation.protocols.agents import Female, Male
+from protocols.agents import Female, Male
 
 # =============================================================================
 # PROTOCOLS

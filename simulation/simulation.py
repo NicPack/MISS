@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Dict, List, Tuple
 
-from reimplementation.interfaces.behaviors import BasicReproduction
-from reimplementation.utils.logger import SimulationLogger
+from interfaces.behaviors import BasicReproduction
+from utils.logger import SimulationLogger
 
 # =============================================================================
 # WORLD AND SIMULATION MANAGEMENT
